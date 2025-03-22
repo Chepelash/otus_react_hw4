@@ -1,0 +1,16 @@
+.counterDiv {
+  display: flex;
+  padding: 0.3em;
+}
+
+.counterDivButton {
+  padding: 0.3em;
+}
+
+.counterDivCounter {
+  padding: 0.3em;
+}
+
+.buyButton {
+  padding: 0.3em;
+}
