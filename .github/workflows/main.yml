@@ -1,52 +1,35 @@
-name: Test, Lint, Build and Deploy on Github Pages
-
+# Workflow name
+name: Build and Publish Storybook to GitHub Pages
+ 
 on:
+  # Event for the workflow to run on
   push:
-    branches: ["master", "main"]
-
-  # Позволяет запустить этот рабочий процесс вручную на вкладке Actions
-  workflow_dispatch:
-
+    branches:
+      - 'your-branch-name' # Replace with the branch you want to deploy from
+ 
 permissions:
-  contents: write
-
+  contents: read
+  pages: write
+  id-token: write
+ 
+# List of jobs
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-
+    # Job steps
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      # Manual Checkout
+      - uses: actions/checkout@v4
         with:
-          node-version: ${{ matrix.node-version }}
-
-      # Устанавливаем зависимости
-      - name: Install dependencies
-        run: npm install
-
-      # Запускаем тесты и линтер
-      - name: Run tests and linter
-        run: npm run lint && npm test
-
-      # Собираем Storybook
-      - name: Build Storybook
-        run: npm run build-storybook
-
-      # Публикуем Storybook на Github Pages
-      - name: Deploy Storybook to Github Pages
-        uses: JamesIves/github-pages-deploy-action@4.2.1
+          fetch-depth: 0
+      # Set up Node
+      - uses: actions/setup-node@v4
         with:
-          branch: gh-pages
-          folder: storybook-static
-          commit-message: "Automatically publish Storybook"
-
-      # Останавливаем выполнение строго при неудачных тестах
-      - name: Fail on failed tests
-        run: |
-          if [ ${{ job.status }} == 'failure' ]; then exit 1; fi;
+          node-version: '20'
+      #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+        with:
+          install_command: yarn install # default: npm ci
+          build_command: yarn build-storybook # default: npm run build-storybook
+          path: storybook-static # default: dist/storybook
+          checkout: false # default: true
