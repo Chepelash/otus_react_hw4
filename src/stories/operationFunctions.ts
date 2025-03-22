@@ -73,3 +73,30 @@ export const createRandomOperation = (createdAt: string): Operation => {
     category: createRandomCategory(),
   };
 };
+
+export type Product = {
+  id: string;
+  name: string;
+  photo: string;
+  desc?: string;
+  createdAt: string;
+  oldPrice?: number;
+  price: number;
+  category: Category;
+};
+/**
+ * Создает случайный продукт (Product).
+ * Принимает дату создания (строка)
+ * */
+export const createRandomProduct = (createdAt: string): Product => {
+  return {
+    id: createRandomString(),
+    name: "productName_" + createRandomString(6),
+    photo: "productPhoto_" + createRandomString(6),
+    desc: "productDesc_" + createRandomString(6),
+    createdAt: createdAt,
+    oldPrice: createRandomPrice(),
+    price: createRandomPrice(),
+    category: createRandomCategory(),
+  };
+};
