@@ -15,7 +15,10 @@ export const Modal = ({ visible, children }: ModalProps) => {
   return (
     <div className="modal">
       <div className="overlay">
-        <div className="content">{children}</div>
+        <div className="content">
+          <div>{children}</div>
+          <button className="closeButton">Close window</button>
+        </div>
       </div>
     </div>
   );
