@@ -1,0 +1,13 @@
+.shortOperation {
+  display: flex;
+  text-align: justify;
+  padding: 1em;
+  border: 0.1em solid black;
+  width: 150px;
+}
+
+.operationText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
