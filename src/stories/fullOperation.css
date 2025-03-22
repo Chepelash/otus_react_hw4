@@ -1,10 +1,10 @@
 .fullOperation {
-  display: flex;
-  text-align: justify;
+  display: block;
   padding: 1em;
   border: 0.1em solid black;
   width: fit-content;
 }
 
 .operationText {
+  text-wrap: stable;
 }

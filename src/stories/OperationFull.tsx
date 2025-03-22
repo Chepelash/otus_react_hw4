@@ -1,5 +1,6 @@
 import { Operation } from "./operationFunctions";
 import "./fullOperation.css";
+import { Button } from "./Button";
 
 export interface OperationFullProps {
   operation: Operation;
@@ -20,6 +21,7 @@ export const OperationFull = ({ operation }: OperationFullProps) => {
           <br />
           Creation date: {operation.createdAt}
         </p>
+        <Button label="Edit" />
       </div>
     </>
   );
