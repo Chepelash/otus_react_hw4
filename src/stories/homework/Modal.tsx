@@ -10,7 +10,7 @@ export const TestNode = () => {
 };
 export const Modal = ({ visible, children }: ModalProps) => {
   if (!visible) {
-    return <></>;
+    return null;
   }
   return (
     <div className="modal">

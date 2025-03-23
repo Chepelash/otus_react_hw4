@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { createRandomProduct } from "./operationFunctions";
+import { createRandomProduct } from "../operationFunctions";
 import { ProductShort } from "./ProductShort";
 
 const meta = {
