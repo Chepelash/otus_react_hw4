@@ -1,4 +1,4 @@
-import { Product } from "./operationFunctions";
+import { Product } from "../operationFunctions";
 import "./productFull.css";
 
 export interface ProductFullProps {

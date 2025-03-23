@@ -1,4 +1,4 @@
-import logo_png from "./assets/shoe-running-icon.png";
+import logo_png from "../assets/shoe-running-icon.png";
 import "./logo.css";
 
 export const Logo = () => {
