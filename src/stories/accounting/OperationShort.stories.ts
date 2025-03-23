@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { OperationShort } from "./OperationShort";
-import { createRandomOperation } from "./operationFunctions";
+import { createRandomOperation } from "../operationFunctions";
 
 const meta = {
   title: "Accounting/OperationShort",
