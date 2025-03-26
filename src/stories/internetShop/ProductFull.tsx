@@ -1,9 +1,15 @@
 import { Product } from "../operationFunctions";
 import "./productFull.css";
 
+type ProductFullT = Pick<
+  Product,
+  "price" | "photo" | "name" | "desc" | "category"
+>;
+
 export interface ProductFullProps {
-  product: Product;
+  product: ProductFullT;
 }
+
 export const ProductFull = ({ product }: ProductFullProps) => {
   return (
     <div className="fullProduct">

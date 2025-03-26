@@ -1,8 +1,13 @@
 import { Operation } from "../operationFunctions";
 import "./fullOperation.css";
 
+type OperationFullT = Pick<
+  Operation,
+  "type" | "amount" | "category" | "name" | "desc" | "createdAt"
+>;
+
 export interface OperationFullProps {
-  operation: Operation;
+  operation: OperationFullT;
 }
 
 export const OperationFull = ({ operation }: OperationFullProps) => {

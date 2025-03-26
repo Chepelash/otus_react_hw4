@@ -1,8 +1,13 @@
 import { Operation } from "../operationFunctions";
 import "./shortOperation.css";
 
+type OperationShortT = Pick<
+  Operation,
+  "type" | "amount" | "category" | "name" | "desc"
+>;
+
 export interface OperationShortProps {
-  operation: Operation;
+  operation: OperationShortT;
 }
 
 export const OperationShort = ({ operation }: OperationShortProps) => {

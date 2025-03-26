@@ -1,9 +1,12 @@
 import { Product } from "../operationFunctions";
 import "./productShort.css";
 
+type ProductShortT = Pick<Product, "price" | "photo" | "name" | "desc">;
+
 export interface ProductShortProps {
-  product: Product;
+  product: ProductShortT;
 }
+
 export const ProductShort = ({ product }: ProductShortProps) => {
   return (
     <div className="shortProduct">
