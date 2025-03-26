@@ -1,4 +1,4 @@
-import { Logo } from "./Logo.tsx";
+import { Logo } from "../logo/Logo.tsx";
 import "./header.css";
 
 export const MyHeader = () => (
