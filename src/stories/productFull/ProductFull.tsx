@@ -1,9 +1,17 @@
-import { Product } from "../operationFunctions";
+import { Category } from "../commonFunctions";
 import "./productFull.css";
 
+export type ProductFullType = {
+  price: number;
+  photo: string;
+  category: Category;
+  name: string;
+  desc: string;
+};
 export interface ProductFullProps {
-  product: Product;
+  product: ProductFullType;
 }
+
 export const ProductFull = ({ product }: ProductFullProps) => {
   return (
     <div className="fullProduct">

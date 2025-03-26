@@ -1,8 +1,22 @@
-import { Operation } from "../operationFunctions";
+import { Category } from "../commonFunctions";
 import "./shortOperation.css";
 
+export type OperationShortType = CostShort | ProfitShort;
+type OperationShortData = {
+  name: string;
+  desc?: string;
+  amount: number;
+  category: Category;
+};
+type CostShort = {
+  type: "Cost";
+} & OperationShortData;
+type ProfitShort = {
+  type: "Profit";
+} & OperationShortData;
+
 export interface OperationShortProps {
-  operation: Operation;
+  operation: OperationShortType;
 }
 
 export const OperationShort = ({ operation }: OperationShortProps) => {
