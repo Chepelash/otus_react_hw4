@@ -1,13 +1,15 @@
-import { Product } from "../operationFunctions";
+import { Category } from "../commonFunctions";
 import "./productFull.css";
 
-type ProductFullT = Pick<
-  Product,
-  "price" | "photo" | "name" | "desc" | "category"
->;
-
+export type ProductFullType = {
+  price: number;
+  photo: string;
+  category: Category;
+  name: string;
+  desc: string;
+};
 export interface ProductFullProps {
-  product: ProductFullT;
+  product: ProductFullType;
 }
 
 export const ProductFull = ({ product }: ProductFullProps) => {

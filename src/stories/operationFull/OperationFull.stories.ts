@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { OperationFull } from "./OperationFull";
-import { createRandomOperation } from "../operationFunctions";
+import { createRandomFullOperation } from "./operationFullFunctions";
 
 const meta = {
   title: "Accounting/OperationFull",
@@ -19,6 +19,6 @@ type Story = StoryObj<typeof meta>;
 
 export const RandomFullOperation: Story = {
   args: {
-    operation: createRandomOperation("22.02.2025"),
+    operation: createRandomFullOperation(),
   },
 };

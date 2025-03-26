@@ -1,10 +1,13 @@
-import { Product } from "../operationFunctions";
 import "./productShort.css";
 
-type ProductShortT = Pick<Product, "price" | "photo" | "name" | "desc">;
-
+export type ProductShortType = {
+  price: number;
+  photo: string;
+  name: string;
+  desc: string;
+};
 export interface ProductShortProps {
-  product: ProductShortT;
+  product: ProductShortType;
 }
 
 export const ProductShort = ({ product }: ProductShortProps) => {

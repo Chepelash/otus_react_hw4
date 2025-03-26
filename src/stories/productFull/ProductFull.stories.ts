@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { createRandomProduct } from "../operationFunctions";
 import { ProductFull } from "./ProductFull";
+import { createRandomProductFull } from "./productFullFunctions";
 
 const meta = {
   title: "InternetShop/ProductFull",
@@ -19,6 +19,6 @@ type Story = StoryObj<typeof meta>;
 
 export const RandomFullProduct: Story = {
   args: {
-    product: createRandomProduct("22.02.2025"),
+    product: createRandomProductFull(),
   },
 };

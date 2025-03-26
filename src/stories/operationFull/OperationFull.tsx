@@ -1,15 +1,24 @@
-import { Operation } from "../operationFunctions";
+import { Category } from "../commonFunctions";
 import "./fullOperation.css";
 
-type OperationFullT = Pick<
-  Operation,
-  "type" | "amount" | "category" | "name" | "desc" | "createdAt"
->;
+export type OperationFullType = CostFull | ProfitFull;
+type OperationFullData = {
+  name: string;
+  desc?: string;
+  amount: number;
+  category: Category;
+  createdAt: string;
+};
+type CostFull = {
+  type: "Cost";
+} & OperationFullData;
+type ProfitFull = {
+  type: "Profit";
+} & OperationFullData;
 
 export interface OperationFullProps {
-  operation: OperationFullT;
+  operation: OperationFullType;
 }
-
 export const OperationFull = ({ operation }: OperationFullProps) => {
   return (
     <div className="fullOperation">
