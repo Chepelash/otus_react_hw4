@@ -1,10 +1,6 @@
 import { ReactNode, useState } from "react";
 import { Theme, ThemeProviderContext } from "./ThemeContext";
 
-export interface ThemeProviderType {
-  theme: Theme;
-  toggleTheme: () => void;
-}
 interface ThemeProviderProps {
   children: ReactNode;
 }

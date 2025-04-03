@@ -1,7 +1,9 @@
 import { useContext } from "react";
 import "./themeUser.css";
-import { ThemeProviderContext } from "../themeProvider/ThemeContext";
-import { ThemeProviderType } from "../themeProvider/ThemeProvider";
+import {
+  ThemeProviderContext,
+  ThemeProviderType,
+} from "../themeProvider/ThemeContext";
 
 export const ThemeUser = () => {
   const { toggleTheme, theme } =
