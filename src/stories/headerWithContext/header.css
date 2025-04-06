@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.header-dark {
+  background-color: black;
+  color: red;
+}
+
+.header-dark button {
+  background-color: grey;
+  color: white;
+}
+.header-dark button:disabled {
+  background-color: dimgrey;
+  color: grey;
+}
