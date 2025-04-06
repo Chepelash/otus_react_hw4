@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, Suspense, useState } from "react";
 import { Lang, LangProviderContext } from "./LangContext";
 import { useTranslation } from "react-i18next";
 
@@ -20,8 +20,10 @@ export const LangProvider = ({ children }: LangProviderProps) => {
     });
   };
   return (
-    <LangProviderContext.Provider value={{ lang, toggleLang }}>
-      {children}
-    </LangProviderContext.Provider>
+    <Suspense fallback="loading...">
+      <LangProviderContext.Provider value={{ lang, toggleLang }}>
+        {children}
+      </LangProviderContext.Provider>
+    </Suspense>
   );
 };
